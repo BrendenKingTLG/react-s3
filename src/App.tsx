@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { S3FileList } from "./components/S3FileList";
+import { S3FileList } from "./components/s3/S3FileList";
 import "./App.css";
+
 const App = () => {
   return (
     <Router>
