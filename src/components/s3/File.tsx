@@ -1,9 +1,16 @@
 import { ListObjectsV2CommandOutput } from "@aws-sdk/client-s3";
 
+/**
+ * Represents a S3 Object.
+ */
 interface FileProps {
   data: Partial<ListObjectsV2CommandOutput>;
 }
 
+/**
+ * Renders a list of S3 Objects.
+ * @param data - The data to display.
+ */
 export const File = ({ data }: FileProps) => {
   return (
     <>

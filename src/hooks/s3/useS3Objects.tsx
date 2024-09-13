@@ -5,6 +5,11 @@ import {
   ListObjectsV2CommandOutput,
 } from "@aws-sdk/client-s3";
 
+/**
+ * Fetches a list of S3 objects.
+ * @param bucket - The S3 bucket name.
+ * @param prefix - The S3 prefix.
+ */
 export const useS3Objects = (bucket: string, prefix: string) => {
   const [data, setData] = useState<Partial<ListObjectsV2CommandOutput>>({});
 
