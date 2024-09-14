@@ -17,7 +17,7 @@ export const S3FileList = () => {
       <HomeHero />
       {currentPrefixData ? (
         <section className="w-full">
-          <h3 className="text-xl font-bold my-2">Items</h3>
+          <h3 className="pl-2 text-xl font-bold my-2 ">Items</h3>
           <Folder data={currentPrefixData} />
           <File data={currentPrefixData} />
         </section>

@@ -1,13 +1,13 @@
 export const TopNav = () => {
   return (
-    <div className="navbar bg-slate-400">
+    <div className="navbar bg-slate-400 w-full">
       <div className="flex-none w-6">
         <a className="btn btn-ghost text-xl">
-          OpenStreetMap{" "}
+          OpenStreetMap
           <span className=" text-2xl font-semibold marker-underline">Data</span>
         </a>
       </div>
-      <div className="flex-1 flex justify-center">
+      <div className="hidden flex-1 lg:flex justify-center">
         <div className="form-control w-full max-w-xs">
           <input
             type="text"

@@ -27,7 +27,7 @@ export const useS3Objects = (bucket: string, prefix: string) => {
       try {
         const command = new ListObjectsV2Command({
           Bucket: bucket,
-          Prefix: prefix,
+          Prefix: prefix.replace("react-s3/", ""),
           Delimiter: "/",
         });
         const result = await client.send(command);
