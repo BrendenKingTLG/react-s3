@@ -17,22 +17,38 @@ export const Folder = ({ data }: FolderProps) => {
 
   const handleFolderClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const folderName = (event.target as HTMLElement).dataset.prefix;
+    console.log(folderName);
     if (folderName) {
       navigate(`/${folderName}`, { state: { prefix: folderName } });
     }
   };
 
   return (
-    <div onClick={handleFolderClick}>
-      {data.CommonPrefixes?.map((prefix: CommonPrefix) => (
-        <p
-          key={prefix.Prefix}
-          data-prefix={prefix.Prefix}
-          className="text-2xl p-2 cursor-pointer"
-        >
-          {prefix.Prefix}
-        </p>
-      ))}
-    </div>
+    data.CommonPrefixes && (
+      <div onClick={handleFolderClick} className="">
+        <div className="overflow-x-auto">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Last Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.CommonPrefixes?.map((prefix: CommonPrefix) => (
+                <tr key={prefix.Prefix}>
+                  <td className=" cursor-pointer" data-prefix={prefix.Prefix}>
+                    {prefix.Prefix?.replace("/", "")}
+                  </td>
+                  <td className="">-</td>
+                  <td>-</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )
   );
 };
