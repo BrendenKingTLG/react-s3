@@ -32,6 +32,7 @@ export const useS3Objects = (bucket: string, prefix: string) => {
         });
         const result = await client.send(command);
         setData(result);
+        // localStorage.setItem("s3Prefix", prefix);
       } catch (error) {
         console.error("Error fetching S3 objects:", error);
       }
